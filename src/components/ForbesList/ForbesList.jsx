@@ -8,6 +8,26 @@ import {
   LeaderBoardProfiles,
 } from './ForbesList.styled';
 
-export const ForbesList = () => {
-  return <div>ForbesList</div>;
+export const ForbesList = ({ list }) => {
+  // const { id, name, capital, avatar, isIncrease } = list;
+  return (
+    <div>
+      <LeaderBoard>
+        <BoardHeader>
+          <BoardTitle>
+            <TitleTop>Forbes</TitleTop>
+            <TitleBottom>Leader board</TitleBottom>
+          </BoardTitle>
+        </BoardHeader>
+
+        <LeaderBoardProfiles>
+          {list.map(item => {
+            // console.log(item);
+            return <ForbesListItem key={item.id} item={item} />;
+          })}
+          {/* Довільна кіл-сть FriendListItem */}
+        </LeaderBoardProfiles>
+      </LeaderBoard>
+    </div>
+  );
 };
